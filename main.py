@@ -1,17 +1,14 @@
+from keys import musical_keys
+
 print("chord to key")
 print("_____________________________________________")
-number_input_Chords = int(input("How many chords are you using? "))
+number_input_chords = int(input("How many chords are you using? "))
 
 input_chords = []
-for index in range(number_input_Chords):
+for index in range(number_input_chords):
     user_input = input("Chord " + str(index + 1) + ": ")
     input_chords.append(user_input)
 
-musical_keys = {
-    "C": ["c", "dm", "em", "F", "G", "Am", "Bdim"],
-    "D": ["D", "Em", "F#m", "G", "A", "Bm", "C#dim"],
-    "E": ["E", "Fm", "Gm", "A", "B", "Cm", "Ddim"]
-}
 print("_____________________________________________")
 numberKeysFound = 0
 
@@ -22,7 +19,7 @@ for key in musical_keys:
         for input_chord in input_chords:
             if musical_keys[key][chord].lower() == input_chord:
                 input_chords_found += 1
-    if input_chords_found == number_input_Chords:
+    if input_chords_found == number_input_chords:
         print("Key of", key)
         print(musical_keys[key])
         numberKeysFound += 1
